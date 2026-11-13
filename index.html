@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08060b">
+<title>Маленькое послание для тебя ♡</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="grain"></div>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<main>
+  <!-- 1. Персонаж + облачко -->
+  <section class="screen intro" id="introScreen">
+    <div class="scene">
+      <p class="bubble">Нажми на сердечко,<br>пожалуйста <span class="bubble-heart">♡</span></p>
+
+      <div class="char">
+        <picture>
+          <source srcset="assets/character.webp" type="image/webp">
+          <img src="assets/character.png" width="805" height="1305" alt="Персонаж с плюшевой игрушкой" draggable="false">
+        </picture>
+        <!-- кнопка лежит ровно поверх сердечка в руках персонажа -->
+        <button class="heart-hit" id="heartButton" type="button" aria-label="Открыть письмо"><i></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Вопросы -->
+  <section class="screen quiz hidden" id="quizScreen" aria-live="polite">
+    <div class="dots" id="dots"></div>
+    <div class="paper-card" id="paperCard">
+      <div class="tape"></div>
+      <div class="paper-decoration">♡</div>
+      <h2 id="questionText"></h2>
+      <div class="answers" id="answers"></div>
+    </div>
+  </section>
+
+  <!-- 3. Финал -->
+  <section class="screen result hidden" id="resultScreen" aria-live="polite">
+    <div class="final-paper">
+      <span class="final-heart">♥</span>
+      <p class="wish" id="wishText"></p>
+      <div class="divider-heart">♡ ♡ ♡</div>
+      <button class="restart" id="restartButton" type="button" aria-label="Заново">↺</button>
+    </div>
+  </section>
+</main>
+
+<!-- Конверт-переход -->
+<div class="envelope-overlay" id="envelopeOverlay" aria-hidden="true">
+  <div class="envelope">
+    <div class="env-back"></div>
+    <div class="env-letter"><span>♡</span></div>
+    <div class="env-front env-left"></div>
+    <div class="env-front env-right"></div>
+    <div class="env-front env-bottom"></div>
+    <div class="env-flap">
+      <div class="flap-face flap-out"></div>
+      <div class="flap-face flap-in"></div>
+    </div>
+    <div class="env-seal">♥</div>
+    <div class="env-hearts">
+      <span style="--x:-120px;--d:.05s;--s:22px">♥</span>
+      <span style="--x:-70px;--d:.2s;--s:16px">♡</span>
+      <span style="--x:-25px;--d:.1s;--s:26px">♥</span>
+      <span style="--x:30px;--d:.28s;--s:18px">♡</span>
+      <span style="--x:80px;--d:.15s;--s:24px">♥</span>
+      <span style="--x:125px;--d:.32s;--s:15px">♡</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
